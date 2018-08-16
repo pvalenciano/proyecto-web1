@@ -1,14 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { PrincipalComponent } from './pages/main/principal/principal.component';
-import { LoginComponent } from './pages/main/login/login.component';
-import { StoreComponent } from './pages/detail/store/store.component';
-import { GalleryComponent } from './pages/detail/gallery/gallery.component';
-import { ContactComponent } from './pages/detail/contact/contact.component';
 
+import {
+  PrincipalComponent,
+  LoginComponent,
+  StoreComponent,
+  GalleryComponent,
+  ContactComponent,
+  MaintopbarComponent
+} from './pages/index';
 
 @NgModule({
   declarations: [
@@ -17,12 +21,14 @@ import { ContactComponent } from './pages/detail/contact/contact.component';
     LoginComponent,
     StoreComponent,
     GalleryComponent,
-    ContactComponent
+    ContactComponent,
+    MaintopbarComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [MaintopbarComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
