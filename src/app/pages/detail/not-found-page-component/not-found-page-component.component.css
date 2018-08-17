@@ -1,0 +1,17 @@
+.errorContainer{
+    width: 100%;
+    margin: auto;
+}
+.errorContent{
+    margin: auto;
+    width: 40%;
+    margin-top: 100px;
+}
+h1{
+    font-size: 40px;
+    color: grey;
+}
+h3{
+    color: grey;
+
+}

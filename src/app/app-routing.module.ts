@@ -9,10 +9,13 @@ import {
   ContactComponent,
   StoreComponent,
   MaintopbarComponent,
-  HomeComponent
+  HomeComponent,
+  NotFoundPageComponentComponent
 } from './pages/index';
 import { componentFactoryName } from '../../node_modules/@angular/compiler';
-
+import {
+  AuthGuard
+} from './guards/index';
 const routes: Routes = [
 
   // { path: '', redirectTo: 'nav/login', pathMatch: 'full'  },
@@ -28,10 +31,11 @@ const routes: Routes = [
   // },
   // { path: '', redirectTo: 'nav', pathMatch: 'full'  },
   { path: '', component: HomeComponent},
+  { path: 'home', component: HomeComponent},
   { path: 'nav', component: MaintopbarComponent},
   { path: 'login', component: LoginComponent },
-  { path: 'principal', component: PrincipalComponent }
-  // { path: '**', component: NotFounComponent }
+  { path: 'principal', component: PrincipalComponent, canActivate:[AuthGuard] },
+  { path: '**', component: NotFoundPageComponentComponent }
 
 
 ];
