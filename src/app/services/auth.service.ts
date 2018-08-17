@@ -20,20 +20,36 @@ export class AuthService {
   }
 
   //entrar con email y contraseña
-  public loginUser(email:string, pass:string){
-    return new Promise((resolve, reject) =>{
-      this.afAuth.auth.signInWithEmailAndPassword(email,pass)
-      .then(userData => resolve(userData),
-      err => reject(err))
+  public loginUser(email: string, pass: string) {
+    return new Promise((resolve, reject) => {
+      this.afAuth.auth.signInWithEmailAndPassword(email, pass)
+        .then(userData => resolve(userData),
+          err => reject(err))
     })
 
   }
 
   //Comprobar si está autenticado
-  public getAuth(){
+  public getAuth() {
     return this.afAuth.authState.map(
       auth => auth);
   }
+
+
+  public loginGoogle() {
+    return this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+  }
+  public loginFacebook() {
+
+  }
+  public loginTwitter() {
+
+  }
+
+
+
+
+
   logout() {
     return this.afAuth.auth.signOut();
   }

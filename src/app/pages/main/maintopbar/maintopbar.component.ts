@@ -11,10 +11,10 @@ import { AuthService } from '../../../services/index';
 })
 export class MaintopbarComponent implements OnInit {
 
-  public isLogin:boolean;
-  public userName:string;
-  public userEmail:string;
-  
+  public isLogin: boolean;
+  public userName: string;
+  public userEmail: string;
+  public userPhoto:string;
   constructor(
     public router: Router,
     public route: ActivatedRoute,
@@ -27,13 +27,15 @@ export class MaintopbarComponent implements OnInit {
         this.isLogin = true;
         this.userName = auth.displayName;
         this.userEmail = auth.email;
-
+        this.userPhoto = auth.photoURL;
 
       } else {
         this.isLogin = false;
       }
     })
   }
+
+
 
   public onClickLogout() {
     this.authService.logout();

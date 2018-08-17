@@ -1,13 +1,20 @@
 <nav class="navbar navbar-expand-lg">
   <ul class="nav nav-tabs">
-    <li class="nav-item" >
-      <a class="nav-link" routerLink="/home" >Home</a>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/home">Home</a>
     </li>
     <li class="nav-item" *ngIf="!isLogin">
       <a class="nav-link" routerLink="/login">Entrar</a>
     </li>
     <li class="nav-item" *ngIf="isLogin">
       <a class="nav-link" href="#" (click)="onClickLogout()">Salir</a>
+    </li>
+    <li class="nav-item" *ngIf="isLogin">
+      <a class="nav-link">{{userName}}</a>
+    </li>
+    <li class="nav-item" *ngIf="isLogin">
+      <img src="{{userPhoto}}" alt="{{userName}}" class="rounded-circle">
+      <span class="badge pill badge-secondary">{{userEmail}}</span>
     </li>
   </ul>
 </nav>

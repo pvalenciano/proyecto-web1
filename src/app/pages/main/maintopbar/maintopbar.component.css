@@ -5,3 +5,7 @@
     height: 50px;
     margin: 0 auto;
 }
+img.rounded-circle{
+    width: 45px;
+    height: 45px;
+}
