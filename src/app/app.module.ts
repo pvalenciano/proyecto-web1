@@ -14,13 +14,18 @@ import {
   MaintopbarComponent
 } from './pages/index';
 
-var config = {
-  apiKey: "<API_KEY>",
-  authDomain: "<PROJECT_ID>.firebaseapp.com",
-  databaseURL: "https://<DATABASE_NAME>.firebaseio.com",
-  storageBucket: "<BUCKET>.appspot.com",
+
+const config = {
+  apiKey: "AIzaSyC2GOASv4l06TQxfDxpoR031KxR9wruBUQ",
+  authDomain: "proyecto-web1-4a024.firebaseapp.com",
+  databaseURL: "https://proyecto-web1-4a024.firebaseio.com",
+  projectId: "proyecto-web1-4a024",
+  storageBucket: "proyecto-web1-4a024.appspot.com",
+  messagingSenderId: "1021512951387"
 };
 firebase.initializeApp(config);
+
+
 
 @NgModule({
   declarations: [
