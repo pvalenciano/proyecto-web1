@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-
+import * as firebase from 'firebase';
 import { AppComponent } from './app.component';
 
 import {
@@ -13,6 +13,14 @@ import {
   ContactComponent,
   MaintopbarComponent
 } from './pages/index';
+
+var config = {
+  apiKey: "<API_KEY>",
+  authDomain: "<PROJECT_ID>.firebaseapp.com",
+  databaseURL: "https://<DATABASE_NAME>.firebaseio.com",
+  storageBucket: "<BUCKET>.appspot.com",
+};
+firebase.initializeApp(config);
 
 @NgModule({
   declarations: [
