@@ -9,13 +9,17 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import {
+  AuthGuard
+} from './guards/index';
+import {
   PrincipalComponent,
   LoginComponent,
   StoreComponent,
   GalleryComponent,
   ContactComponent,
   MaintopbarComponent,
-  HomeComponent
+  HomeComponent,
+  NotFoundPageComponentComponent
 } from './pages/index';
 
 import {
@@ -31,7 +35,8 @@ import {
     GalleryComponent,
     ContactComponent,
     MaintopbarComponent,
-    HomeComponent
+    HomeComponent,
+    NotFoundPageComponentComponent
   ],
   imports: [
     AngularFireAuthModule,
@@ -40,7 +45,7 @@ import {
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [MaintopbarComponent, AuthService],
+  providers: [MaintopbarComponent, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
