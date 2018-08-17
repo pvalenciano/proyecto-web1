@@ -8,7 +8,8 @@ import {
   GalleryComponent,
   ContactComponent,
   StoreComponent,
-  MaintopbarComponent
+  MaintopbarComponent,
+  HomeComponent
 } from './pages/index';
 import { componentFactoryName } from '../../node_modules/@angular/compiler';
 
@@ -26,19 +27,11 @@ const routes: Routes = [
   //   ]
   // },
   // { path: '', redirectTo: 'nav', pathMatch: 'full'  },
+  { path: '', component: HomeComponent},
   { path: 'nav', component: MaintopbarComponent},
   { path: 'login', component: LoginComponent },
   { path: 'principal', component: PrincipalComponent }
-  // { 
-  //   path: 'nav',
-  //   children: [
-  //     { path: 'login', component: LoginComponent },
-  //     { path: 'principal', component: PrincipalComponent }
-
-
-  //   ]
-  // },
-  // { path: '', redirectTo: 'nav', pathMatch: 'full' },
+  // { path: '**', component: NotFounComponent }
 
 
 ];

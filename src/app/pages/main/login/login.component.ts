@@ -31,6 +31,17 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  public onSubmitLoginUser():void{
+    this.authService.loginUser(this.iEmail, this.iPass)
+    .then((res) =>{
+      this.router.navigate(['/principal']);
+      console.log('Registrado!');
+      console.log(res);
+    }).catch((err) =>{
+      console.error(err);
+    });
+  }
+
 
   public changeScreen():void{
     if(this.screen == 0){

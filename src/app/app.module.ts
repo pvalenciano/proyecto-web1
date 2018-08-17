@@ -14,7 +14,8 @@ import {
   StoreComponent,
   GalleryComponent,
   ContactComponent,
-  MaintopbarComponent
+  MaintopbarComponent,
+  HomeComponent
 } from './pages/index';
 
 import {
@@ -29,7 +30,8 @@ import {
     StoreComponent,
     GalleryComponent,
     ContactComponent,
-    MaintopbarComponent
+    MaintopbarComponent,
+    HomeComponent
   ],
   imports: [
     AngularFireAuthModule,
