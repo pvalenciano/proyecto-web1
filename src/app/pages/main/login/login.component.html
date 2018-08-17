@@ -1,3 +1,4 @@
+<!-- LOGIN SCREEN -->
 <div class="screen" *ngIf="screen === 0">
   <div class="row">
     <div class="col-md-6 mx-auto mt-5">
@@ -34,18 +35,20 @@
     </div>
   </div>
 </div>
+
+<!-- REGISTER SCREEN -->
 <div class="screen" *ngIf="screen === 1">
   <div class="row">
     <div class="col-md-6 mx-auto mt-5">
       <div class="card">
         <div class="card-body">
           <h1 class="text-center">REGISTRO</h1>
-          <form>
+          <form (submit)="onSubmitAddUser()">
             <div class="form-group">
-              <input placeholder="Email" type="text" class="form-control" name="email" id="email">
+              <input [(ngModel)]="iEmail" placeholder="Email" type="text" class="form-control" name="email" id="email">
             </div>
             <div class="form-group">
-              <input placeholder="Contraseña" type="text" name="password" class="form-control" id="password">
+              <input [(ngModel)]="iPass" placeholder="Contraseña" type="text" name="password" class="form-control" id="password">
             </div>
             <div class="form-group">
               <input placeholder="Repetir Contraseña" type="text" name="password-again" class="form-control" id="password-again">
