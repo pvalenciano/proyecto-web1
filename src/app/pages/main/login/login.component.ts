@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
 
   }
 
+
   public onNtwClick(option): void {
     switch (option) {
       case 0:
@@ -29,7 +30,7 @@ export class LoginComponent implements OnInit {
         console.log('facebook');
         this.authService.loginFacebook()
           .then((res) => {
-            this.router.navigate(['principal']);
+            this.router.navigate(['private']);
 
           }).catch(err => console.log(err.message));
 
@@ -39,7 +40,7 @@ export class LoginComponent implements OnInit {
         console.log('google');
         this.authService.loginGoogle()
           .then((res) => {
-            this.router.navigate(['principal']);
+            this.router.navigate(['private']);
 
           }).catch(err => console.log(err.message));
 
@@ -49,7 +50,7 @@ export class LoginComponent implements OnInit {
         console.log('twitter');
         this.authService.loginTwitter()
           .then((res) => {
-            this.router.navigate(['principal']);
+            this.router.navigate(['private']);
 
           }).catch(err => console.log(err.message));
 
@@ -73,7 +74,7 @@ export class LoginComponent implements OnInit {
   public onSubmitLoginUser(): void {
     this.authService.loginUser(this.iEmail, this.iPass)
       .then((res) => {
-        this.router.navigate(['/principal']);
+        this.router.navigate(['private']);
         console.log('Registrado!');
         console.log(res);
       }).catch((err) => {

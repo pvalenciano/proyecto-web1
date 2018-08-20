@@ -12,14 +12,14 @@ import {
   AuthGuard
 } from './guards/index';
 import {
-  PrincipalComponent,
   LoginComponent,
   StoreComponent,
   GalleryComponent,
   ContactComponent,
   MaintopbarComponent,
   HomeComponent,
-  NotFoundPageComponentComponent
+  NotFoundPageComponentComponent,
+  PrivateZoneComponent
 } from './pages/index';
 
 import {
@@ -29,14 +29,14 @@ import {
 @NgModule({
   declarations: [
     AppComponent,
-    PrincipalComponent,
     LoginComponent,
     StoreComponent,
     GalleryComponent,
     ContactComponent,
     MaintopbarComponent,
     HomeComponent,
-    NotFoundPageComponentComponent
+    NotFoundPageComponentComponent,
+    PrivateZoneComponent
   ],
   imports: [
     AngularFireAuthModule,

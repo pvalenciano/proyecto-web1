@@ -4,13 +4,14 @@ import { RouterModule, Routes } from '@angular/router';
 
 import {
   LoginComponent,
-  PrincipalComponent,
+  // PrincipalComponent,
   GalleryComponent,
   ContactComponent,
   StoreComponent,
   MaintopbarComponent,
   HomeComponent,
-  NotFoundPageComponentComponent
+  NotFoundPageComponentComponent,
+  PrivateZoneComponent
 } from './pages/index';
 import { componentFactoryName } from '../../node_modules/@angular/compiler';
 import {
@@ -34,8 +35,9 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'nav', component: MaintopbarComponent},
   { path: 'login', component: LoginComponent },
-  { path: 'principal', component: PrincipalComponent, canActivate:[AuthGuard] },
-  { path: '**', component: NotFoundPageComponentComponent }
+  { path: 'private', component: PrivateZoneComponent, canActivate:[AuthGuard] },
+  { path: '**', component: NotFoundPageComponentComponent },
+  // { path: 'private-zone', component: NotFoundPageComponentComponent }
 
 
 ];

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router, ActivatedRoute, RouterModule, Routes } from '@angular/router';
 import { AuthService } from '../../../services/index';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-maintopbar',
@@ -36,7 +37,12 @@ export class MaintopbarComponent implements OnInit {
     })
   }
 
+  public createForm():void{
 
+  }
+  public initForm():void{
+    
+  }
 
   public onClickLogout() {
     this.authService.logout();

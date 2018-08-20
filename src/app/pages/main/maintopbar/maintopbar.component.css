@@ -1,11 +1,73 @@
 .navbar{
-    background-color: rgb(99, 98, 98);
+    /* background-color: rgba(0, 0, 0, 0.808); */
     color: white;
     width: 100%;
-    height: 50px;
     margin: 0 auto;
-}
+    position: relative;
+    background-color: transparent;
+    
+} 
 img.rounded-circle{
     width: 45px;
     height: 45px;
 }
+.nav-link{
+    color: rgb(197, 197, 197);
+    font-family: 'Astloch', cursive;
+    font-size: 18px;
+}
+
+span.badge{
+    color: rgb(114, 0, 0);
+    font-size: 18px;
+    font-family: 'Astloch', cursive;
+    background-color:transparent;
+}
+.nav{
+    width: 100%;
+}
+.nav-link:hover{
+    color: rgb(114, 0, 0);    
+    background-color:transparent;
+
+
+}
+#hrefUserName{
+    color: rgb(197, 197, 197);
+    font-family: 'Astloch', cursive;
+    font-size: 18px;
+    font-weight: bold;
+
+}
+#loginCont{
+
+}
+.userAcr{
+    margin-left: 50%;
+    display: inline-flex;
+
+}
+#liUser{
+    margin-right: 45px;
+}
+ #liUserName, #liExit{
+    margin-left: 25px;
+
+}
+
+/* 
+font-family: 'Indie Flower', cursive;
+font-family: 'Metamorphous', cursive;
+font-family: 'Pompiere', cursive;
+font-family: 'Loved by the King', cursive;
+font-family: 'UnifrakturMaguntia', cursive;
+font-family: 'UnifrakturCook', cursive;
+
+    font-family: 'Amatic SC', cursive;
+font-family: 'Astloch', cursive; */
+
+
+
+
+
+
