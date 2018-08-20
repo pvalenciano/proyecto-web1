@@ -12,10 +12,13 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 })
 export class MaintopbarComponent implements OnInit {
 
-  public isLogin: boolean;
-  public userName: string;
-  public userEmail: string;
-  public userPhoto:string;
+  public userData ={
+    isLogin:false,
+    userName:'',
+    userEmail: '',
+    userPhoto:''
+  }
+  
   constructor(
     public router: Router,
     public route: ActivatedRoute,
@@ -26,22 +29,15 @@ export class MaintopbarComponent implements OnInit {
     this.authService.getAuth().subscribe(auth => {
       if (auth) {
         console.log('auth: ',auth);
-        this.isLogin = true;
-        this.userName = auth.displayName;
-        this.userEmail = auth.email;
-        this.userPhoto = auth.photoURL;
+        this.userData.isLogin = true;
+        this.userData.userName = auth.displayName;
+        this.userData.userEmail = auth.email;
+        this.userData.userPhoto = auth.photoURL;
 
       } else {
-        this.isLogin = false;
+        this.userData.isLogin = false;
       }
     })
-  }
-
-  public createForm():void{
-
-  }
-  public initForm():void{
-    
   }
 
   public onClickLogout() {
