@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
   }
 
   public onNtwClick(option): void {
@@ -26,6 +27,12 @@ export class LoginComponent implements OnInit {
       case 0:
         //facebook
         console.log('facebook');
+        this.authService.loginFacebook()
+          .then((res) => {
+            this.router.navigate(['principal']);
+
+          }).catch(err => console.log(err.message));
+
         break;
       case 1:
         //google
@@ -40,6 +47,11 @@ export class LoginComponent implements OnInit {
       case 2:
         //twitter
         console.log('twitter');
+        this.authService.loginTwitter()
+          .then((res) => {
+            this.router.navigate(['principal']);
+
+          }).catch(err => console.log(err.message));
 
         break;
 

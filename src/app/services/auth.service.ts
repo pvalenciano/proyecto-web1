@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase';
+import { FirebaseApp } from '../../../node_modules/angularfire2';
 @Injectable()
 //servicio para la autenticación de los usuarios
 export class AuthService {
@@ -40,10 +41,10 @@ export class AuthService {
     return this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
   public loginFacebook() {
-
+    return this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
   }
   public loginTwitter() {
-
+    return this.afAuth.auth.signInWithPopup(new firebase.auth.TwitterAuthProvider());
   }
 
 

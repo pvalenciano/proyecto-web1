@@ -24,6 +24,7 @@ export class MaintopbarComponent implements OnInit {
   ngOnInit() {
     this.authService.getAuth().subscribe(auth => {
       if (auth) {
+        console.log('auth: ',auth);
         this.isLogin = true;
         this.userName = auth.displayName;
         this.userEmail = auth.email;
