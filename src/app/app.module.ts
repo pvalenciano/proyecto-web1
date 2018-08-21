@@ -4,22 +4,25 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import * as firebase from 'firebase';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+
 import {
   AuthGuard
 } from './guards/index';
 import {
-  PrincipalComponent,
   LoginComponent,
   StoreComponent,
   GalleryComponent,
   ContactComponent,
   MaintopbarComponent,
   HomeComponent,
-  NotFoundPageComponentComponent
+  NotFoundPageComponentComponent,
+  PrivateZoneComponent
 } from './pages/index';
 
 import {
@@ -29,21 +32,23 @@ import {
 @NgModule({
   declarations: [
     AppComponent,
-    PrincipalComponent,
     LoginComponent,
     StoreComponent,
     GalleryComponent,
     ContactComponent,
     MaintopbarComponent,
     HomeComponent,
-    NotFoundPageComponentComponent
+    NotFoundPageComponentComponent,
+    PrivateZoneComponent
   ],
   imports: [
     AngularFireAuthModule,
+    AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     FormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [MaintopbarComponent, AuthService, AuthGuard],
   bootstrap: [AppComponent]

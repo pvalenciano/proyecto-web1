@@ -1,16 +1,22 @@
 <!-- LOGIN SCREEN -->
 <div class="screen" *ngIf="screen === 0">
+  <div class="alert alert-danger" *ngIf="error.errorBoolean">
+    <strong>Danger!</strong> {{error.errorLbl}}
+  </div>
+
   <div class="row">
     <div class="col-md-6 mx-auto mt-5">
       <div class="card">
         <div class="card-body">
           <h1 class="text-center">LOGIN</h1>
-          <form (submit)="onSubmitLoginUser()">
+          <form [formGroup]="myForm" (submit)="onSubmitLoginUser()">
             <div class="form-group">
-              <input [(ngModel)]="iEmail" placeholder="Email" type="text" class="form-control" name="email" id="email">
+              <input [ngStyle]="error.styleInput" formControlName="iEmail" placeholder="Email" type="text" class="form-control" name="email"
+                id="email" required>
             </div>
             <div class="form-group">
-              <input [(ngModel)]="iPass" placeholder="Contraseña" type="password" name="password" class="form-control" id="password">
+              <input [ngStyle]="error.styleInput" formControlName="iPass" placeholder="Contraseña" type="password" name="password" class="form-control"
+                id="password">
             </div>
             <button id="btnEnviar" type="submit" value="enviar" class="btn btn-primary btn-block btn-lg">Enviar</button>
           </form>
@@ -24,9 +30,9 @@
         <div class="card-body">
           <button class="btn btn-lg btn-facebook" (click)="onNtwClick(0)">
             <i class="fa fa-facebook"></i>Facebook</button>
-          <button class="btn btn-lg btn-google"  (click)="onNtwClick(1)">
+          <button class="btn btn-lg btn-google" (click)="onNtwClick(1)">
             <i class="fa fa-google-plus" aria-hidden="true"></i>Google</button>
-          <button class="btn btn-lg btn-twitter"  (click)="onNtwClick(2)">
+          <button class="btn btn-lg btn-twitter" (click)="onNtwClick(2)">
             <i class="fa fa-twitter"></i>Twitter</button>
           <label class="lblRegistro" (click)="changeScreen()">¿No tienes usuario?</label>
 
@@ -38,22 +44,29 @@
 
 <!-- REGISTER SCREEN -->
 <div class="screen" *ngIf="screen === 1">
+  <div class="alert alert-success" *ngIf="error.validBoolean">
+    <strong>Good!</strong> Password is ok
+  </div>
   <div class="row">
     <div class="col-md-6 mx-auto mt-5">
       <div class="card">
         <div class="card-body">
           <h1 class="text-center">REGISTRO</h1>
-          <form (submit)="onSubmitAddUser()">
+          <form [formGroup]="myForm">
             <div class="form-group">
-              <input [(ngModel)]="iEmail" placeholder="Email" type="text" class="form-control" name="email" id="email">
+              <input formControlName="iName" placeholder="Nombre" type="text" class="form-control" name="name" id="name">
             </div>
             <div class="form-group">
-              <input [(ngModel)]="iPass" placeholder="Contraseña" type="password" name="password" class="form-control" id="password">
+              <input formControlName="iEmail" placeholder="Email" type="text" class="form-control" name="email" id="email">
             </div>
             <div class="form-group">
-              <input placeholder="Repetir Contraseña" type="text" name="password-again" class="form-control" id="password-again">
+              <input formControlName="iPass" placeholder="Contraseña" type="password" name="password" class="form-control" id="password">
             </div>
-            <button id="btnEnviar" type="submit" value="enviar" class="btn btn-primary btn-block btn-lg">Enviar</button>
+            <div class="form-group">
+              <input formControlName="iPassRep" placeholder="Repetir Contraseña" type="text" name="password-again" class="form-control"
+                id="password-again">
+            </div>
+            <button id="btnEnviar" (click)="onSubmitAddUser()" type="submit" value="enviar" class="btn btn-primary btn-block btn-lg">Enviar</button>
           </form>
         </div>
       </div>

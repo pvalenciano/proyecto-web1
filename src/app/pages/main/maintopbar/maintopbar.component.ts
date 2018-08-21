@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router, ActivatedRoute, RouterModule, Routes } from '@angular/router';
 import { AuthService } from '../../../services/index';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-maintopbar',
@@ -11,10 +12,13 @@ import { AuthService } from '../../../services/index';
 })
 export class MaintopbarComponent implements OnInit {
 
-  public isLogin: boolean;
-  public userName: string;
-  public userEmail: string;
-  public userPhoto:string;
+  public userData ={
+    isLogin:false,
+    userName:'',
+    userEmail: '',
+    userPhoto:''
+  }
+  
   constructor(
     public router: Router,
     public route: ActivatedRoute,
@@ -25,18 +29,16 @@ export class MaintopbarComponent implements OnInit {
     this.authService.getAuth().subscribe(auth => {
       if (auth) {
         console.log('auth: ',auth);
-        this.isLogin = true;
-        this.userName = auth.displayName;
-        this.userEmail = auth.email;
-        this.userPhoto = auth.photoURL;
+        this.userData.isLogin = true;
+        this.userData.userName = auth.displayName;
+        this.userData.userEmail = auth.email;
+        this.userData.userPhoto = auth.photoURL;
 
       } else {
-        this.isLogin = false;
+        this.userData.isLogin = false;
       }
     })
   }
-
-
 
   public onClickLogout() {
     this.authService.logout();
