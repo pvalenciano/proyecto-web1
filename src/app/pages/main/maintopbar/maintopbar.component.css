@@ -5,7 +5,7 @@
     margin: 0 auto;
     position: relative;
     background-color: transparent;
-    
+    overflow-x: hidden;
 } 
 img.rounded-circle{
     width: 45px;
@@ -25,9 +25,11 @@ span.badge{
 }
 .nav{
     width: 100%;
+    position: absolute;
+    bottom:0;
 }
 .nav-link:hover{
-    color: rgb(114, 0, 0);    
+    color: rgb(41, 39, 39);    
     background-color:transparent;
 
 
