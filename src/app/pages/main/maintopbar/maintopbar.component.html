@@ -3,24 +3,33 @@
     <li class="nav-item">
       <a class="nav-link" routerLink="/home">Home</a>
     </li>
+
+    <li class="nav-item" *ngIf="userData.isLogin">
+      <a class="nav-link" routerLink="/store">Tienda</a>
+    </li>
+    <li class="nav-item " *ngIf="userData.isLogin">
+      <a class="nav-link" routerLink="/gallery">Galeria</a>
+    </li>
+
     <li id="loginCont" class="nav-item" *ngIf="!userData.isLogin">
       <a class="nav-link" routerLink="/login">
         <span class="glyphicon glyphicon-user"></span> Entrar</a>
-
     </li>
-    <div class="userAcr">
-      <li id="liUser" class="nav-item" *ngIf="userData.isLogin">
-        <img src="{{userData.userPhoto}}" alt="{{userData.userName}}" class="rounded-circle">
-        <span class="badge pill badge-secondary">{{userData.userEmail}}</span>
-      </li>
-      <li id="liUserName" class="nav-item" *ngIf="userData.isLogin">
-        <a class="nav-link" id="hrefUserName">{{userData.userName}}</a>
-      </li>
-      <li id="liExit" class="nav-item" *ngIf="userData.isLogin">
-        <a class="nav-link" href="#" (click)="onClickLogout()">
-          <span class="glyphicon glyphicon-log-in"></span> Salir</a>
-      </li>
-    </div>
+    <li class="nav-item" *ngIf="userData.isLogin">
+      <a class="nav-link" routerLink="/perfil">{{userData.userName}}</a>
+    </li>
+    <li class="nav-item" *ngIf="userData.isLogin">
+      <img src="{{userData.userPhoto}}" alt="{{userData.userName}}" class="rounded-circle">
+    </li>
+    <!-- <li id="itemcart" class="nav-item" *ngIf="userData.isLogin">
+      <a class="nav-link" routerLink="/cart">
+        <span class="glyphicon glyphicon-shopping-cart"></span> <span class="badge badge-pill badge-light ml-2">3</span></a>
+    </li> -->
+    <li id="itemexit" class="nav-item" *ngIf="userData.isLogin">
+      <a class="nav-link" href="#" (click)="onClickLogout()">
+        <span class="glyphicon glyphicon-log-in"></span> Salir</a>
+    </li>
+
 
   </ul>
 </nav>

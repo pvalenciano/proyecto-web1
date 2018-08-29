@@ -4,12 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import * as firebase from 'firebase';
 import { AppComponent } from './app.component';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-
 
 import {
   AuthGuard
@@ -22,13 +21,23 @@ import {
   MaintopbarComponent,
   HomeComponent,
   NotFoundPageComponentComponent,
-  PrivateZoneComponent
+  PrivateZoneComponent,
+  ImgGalleryComponent
+
 } from './pages/index';
 
 import {
   AuthService
 } from './services/index';
 
+import {
+  StoreItemsComponent,
+  CartItemsComponent,
+
+} from './components/index';
+
+import { ImageService } from './services/image.service';
+import { FilterPipeService } from './services/filter-pipe.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +48,11 @@ import {
     MaintopbarComponent,
     HomeComponent,
     NotFoundPageComponentComponent,
-    PrivateZoneComponent
+    PrivateZoneComponent,
+    StoreItemsComponent,
+    CartItemsComponent,
+    ImgGalleryComponent,
+    FilterPipeService
   ],
   imports: [
     AngularFireAuthModule,
@@ -50,7 +63,7 @@ import {
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [MaintopbarComponent, AuthService, AuthGuard],
+  providers: [MaintopbarComponent, AuthService, AuthGuard, ImageService, FilterPipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

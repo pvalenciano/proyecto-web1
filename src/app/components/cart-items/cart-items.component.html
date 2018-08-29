@@ -1,0 +1,26 @@
+<div class="cart-item-container">
+  <div class="img-container">
+    <div class="img">
+
+      {{items.photo}}
+
+    </div>
+  </div>
+  <div class="name-container">
+    <div class="name">
+      <h5>{{items.name}}</h5>
+      <span class="glyphicon glyphicon-remove"></span>
+
+    </div>
+      <div class="select-container">
+        <select class="form-control" id="sel1">
+          <option *ngFor="let n of numbers">{{n}}</option>
+        </select>
+      </div>
+     
+
+  
+
+  </div>
+
+</div>

@@ -1,5 +1,51 @@
 <div class="containerPrivate">
-  <div class="container">
-    <h2>PRIVATE-ZONE</h2>
+  <div class="container" id="perfil-container">
+    <div class="user-info">
+      <img src="{{userData.userPhoto}}" alt="{{userData.userName}}" class="rounded-img">
+
+      <h2>{{userData.userName}}</h2>
+
+    </div>
+
+    <form [formGroup]="myForm" class="form-container">
+
+      <div class="row">
+        <div class="col-sm-4">
+          <label>Nombre</label>
+          <input formControlName="iName" type="text" name="name" class="form-control" id="inputName"  />
+        </div>
+        <div class="col-sm-4">
+          <label>Apellidos</label>
+          <input formControlName="iSurname" type="text" name="surname" class="form-control" id="inputSurname"  />
+        </div>
+        <div class="col-sm-4">
+          <label>Email</label>
+          <input formControlName="iEmail" type="text" name="email" class="form-control" id="inputEmail"  />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <label>Direccion</label>
+          <input formControlName="iAddress" type="text" name="address" class="form-control" id="inputAddress"  />
+        </div>
+        <div class="col-sm-4">
+          <label>Dirección</label>
+          <input formControlName="iCp" type="text" name="pc" class="form-control" id="inputPostalCode"  />
+        </div>
+      </div>
+
+    </form>
+    <div class="buttons">
+
+      <div class="savecancel-button" *ngIf="edit">
+        <button (click)="saveButton()" class="btn btn-success">Guardar</button>
+        <button (click)="cancelButton()" class="btn btn-danger">Cancelar</button>
+      </div>
+      <div class="edit-button">
+        <button *ngIf="!edit" (click)="editButton()" class="btn btn-dark">Editar</button>
+
+      </div>
+    </div>
+
   </div>
 </div>

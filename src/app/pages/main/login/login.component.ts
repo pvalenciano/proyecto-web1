@@ -121,7 +121,7 @@ export class LoginComponent implements OnInit {
         console.log('facebook');
         this.authService.loginFacebook()
           .then((res) => {
-            this.router.navigate(['private']);
+            this.router.navigate(['perfil']);
 
           }).catch(err => console.log(err.message));
         break;
@@ -129,7 +129,7 @@ export class LoginComponent implements OnInit {
         console.log('google');
         this.authService.loginGoogle()
           .then((res) => {
-            this.router.navigate(['private']);
+            this.router.navigate(['perfil']);
           }).catch(err => console.log(err.message));
 
         break;
@@ -137,7 +137,7 @@ export class LoginComponent implements OnInit {
         console.log('twitter');
         this.authService.loginTwitter()
           .then((res) => {
-            this.router.navigate(['private']);
+            this.router.navigate(['perfil']);
           }).catch(err => console.log(err.message));
 
         break;
@@ -152,7 +152,7 @@ export class LoginComponent implements OnInit {
     this.authService.loginUser(this.myForm.get('iEmail').value, this.myForm.get('iPass').value)
       .then((res) => {
 
-        this.router.navigate(['private']);
+        this.router.navigate(['perfil']);
         console.log('login correcto!');
         console.log(res);
       }).catch((err) => {

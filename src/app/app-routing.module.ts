@@ -11,8 +11,11 @@ import {
   MaintopbarComponent,
   HomeComponent,
   NotFoundPageComponentComponent,
-  PrivateZoneComponent
+  PrivateZoneComponent,
+  
+  ImgGalleryComponent
 } from './pages/index';
+
 import { componentFactoryName } from '../../node_modules/@angular/compiler';
 import {
   AuthGuard
@@ -31,11 +34,15 @@ const routes: Routes = [
   //   ]
   // },
   // { path: '', redirectTo: 'nav', pathMatch: 'full'  },
-  { path: '', component: HomeComponent},
-  { path: 'home', component: HomeComponent},
-  { path: 'nav', component: MaintopbarComponent},
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'gallery', component: GalleryComponent, canActivate: [AuthGuard] },
+  { path: 'image/:id', component: ImgGalleryComponent, canActivate:[AuthGuard] },
+  { path: 'nav', component: MaintopbarComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'private', component: PrivateZoneComponent, canActivate:[AuthGuard] },
+  { path: 'perfil', component: PrivateZoneComponent, canActivate: [AuthGuard] },
+  { path: 'store', component: StoreComponent, canActivate: [AuthGuard] },
+
   { path: '**', component: NotFoundPageComponentComponent },
   // { path: 'private-zone', component: NotFoundPageComponentComponent }
 

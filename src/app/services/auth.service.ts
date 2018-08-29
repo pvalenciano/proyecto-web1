@@ -19,6 +19,7 @@ export class AuthService {
   public name = this.selectedUser.name;
   public email= this.selectedUser.email;
   public pass= this.selectedUser.password;
+  
   constructor(
     public afAuth: AngularFireAuth,
     private firebaseDatabase: AngularFireDatabase

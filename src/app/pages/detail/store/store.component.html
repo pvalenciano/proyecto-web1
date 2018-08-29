@@ -1,3 +1,39 @@
-<p>
-  store works!
-</p>
+<div class="container-store">
+  <div class="cart-container" [class.cart-container-extended]="openCart">
+
+    <div class="cart-icon">
+      <div class="icon">
+        <span (click)="openPopup()" class="glyphicon glyphicon-shopping-cart"></span> <span class="badge badge-pill badge-light ml-2">{{cart.length}}</span>
+
+      </div>
+
+    </div>
+
+    <div class="cart" *ngIf="openCart">
+
+      <!-- <ul >
+        <li *ngFor="let item of cart">{{item.name}}</li>
+      </ul> -->
+      <app-cart-items *ngFor="let item of cart" [items]="item"></app-cart-items>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="store">
+      <div class="row" class="itemClass">
+
+        <app-store-items *ngFor="let item of itemList" [items]="item" (click)="selectedItem(item)"></app-store-items>
+
+      </div>
+
+    </div>
+
+
+
+
+
+
+  </div>
+
+</div>

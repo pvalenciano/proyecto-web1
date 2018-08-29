@@ -1,3 +1,52 @@
 .containerPrivate{
+    height: 700px;
     width: 100%;
+    background: #FC5C7D;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6A82FB, #FC5C7D);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #6A82FB, #FC5C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+#perfil-container{
+    background-color: rgba(171, 172, 171, 0.541);
+
+}
+.container{
+    position: relative;
+    top:20px;
+    height: 500px;
+}
+.img-container{
+    width: 10%;
+    margin: auto;
+}
+.rounded-img{
+    border-radius:50%;
+    width: 150px;
+   
+}
+
+.user-info{
+    text-align: center;
+}
+.form-container{
+    width: 80%;
+    margin: auto;
+
+}
+
+.buttons {
+    background-color: yellow;
+    width: 100px;
+    height: 60px;
+}
+.form-control{
+    height: 40px;
+}
+.buttons{
+    text-align: center;
+    margin-top: 20px;
+}
+button{
+    width: 110px;
+    height: 30px;
 }
